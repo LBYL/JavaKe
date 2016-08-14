@@ -1,4 +1,4 @@
-package com.lbyl;
+package com.lbyl.Biz;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,16 +30,33 @@ public class ServerThread extends Thread {
 
 			// 一旦上线，则问候
 			ous.write("欢迎上线!\r\n".getBytes());// getbytes获取的是单字节码
+			
+			checkLogin();
+			
+			
+			
 
 			BufferedReader bf = new BufferedReader(new InputStreamReader(ins));// 将输入流包装
-			String readLine = bf.readLine();
 
-			System.out.println(readLine);
+
+
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	/**
+	 * 验证账户
+	 * @throws IOException 
+	 */
+	private void checkLogin() throws IOException {
+		ous.write("请输入账号密码\r\n:".getBytes());
+		
+		
+		
+		
+		
 	}
 
 }

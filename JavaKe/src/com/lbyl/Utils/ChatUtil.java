@@ -1,4 +1,4 @@
-package com.lbyl;
+package com.lbyl.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,12 +9,16 @@ import java.util.List;
  * @author LBYL
  *
  */
-public class ChatTools {
+public class ChatUtil {
 
-	private ChatTools() {
-	}// 无需外部构造
-
+	// 无需外部构造
+	private ChatUtil() {
+	}
+	//线程队列维护
 	private static ArrayList<Thread> stList = new ArrayList();
+	
+	
+	
 
 	/**
 	 * @return the stList
@@ -28,7 +32,7 @@ public class ChatTools {
 	 *            the stList to set
 	 */
 	public static void setStList(ArrayList<Thread> stList) {
-		ChatTools.stList = stList;
+		ChatUtil.stList = stList;
 	}
 
 }
