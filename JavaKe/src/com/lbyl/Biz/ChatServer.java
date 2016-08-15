@@ -13,9 +13,25 @@ import com.lbyl.Utils.ChatUtil;
  *
  */
 public class ChatServer {
-
-	public static void main(String[] args) {
-
+	
+	private ChatServer cs;
+	
+	//单例
+	private ChatServer() {
+	}
+	public ChatServer getInstance(){
+		if (cs==null){
+			cs = new ChatServer();
+			return cs;
+		}else {
+			return cs;
+		}
+	}
+	
+	/**
+	 * 开启服务器
+	 */
+	public void setUpServer(){
 		try {
 			// 创建服务器
 			ServerSocket sc = new ServerSocket(9090);
@@ -42,5 +58,7 @@ public class ChatServer {
 			e.printStackTrace();
 		}
 	}
+	
+
 
 }
