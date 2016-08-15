@@ -12,14 +12,10 @@ import java.util.List;
 public class ChatUtil {
 
 	// 无需外部构造
-	private ChatUtil() {
-	}
+	private ChatUtil() {}
 	//线程队列维护
 	private static ArrayList<Thread> stList = new ArrayList();
 	
-	
-	
-
 	/**
 	 * @return the stList
 	 */
@@ -33,6 +29,12 @@ public class ChatUtil {
 	 */
 	public static void setStList(ArrayList<Thread> stList) {
 		ChatUtil.stList = stList;
+	}
+	/**
+	 * 群发方法
+	 */
+	public static void sendMsg2All() {
+		
 	}
 
 }

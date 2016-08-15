@@ -9,7 +9,7 @@ package com.lbyl.Bean;
 public class UserInfo {
 
 	private String name;
-	private int password;
+	private String password;
 
 	/**
 	 * @return the name
@@ -29,7 +29,7 @@ public class UserInfo {
 	/**
 	 * @return the password
 	 */
-	public int getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
@@ -37,7 +37,7 @@ public class UserInfo {
 	 * @param password
 	 *            the password to set
 	 */
-	public void setPassword(int password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 

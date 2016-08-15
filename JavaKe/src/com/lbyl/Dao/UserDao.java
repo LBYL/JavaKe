@@ -13,7 +13,7 @@ import com.lbyl.Bean.UserInfo;
  */
 public final class UserDao {
 
-	private static Map<String, UserInfo> UserDB = new HashMap();
+	public static Map<String, UserInfo> UserDB = new HashMap();
 
 	// 静态块模拟用户数据
 	static {
@@ -22,7 +22,7 @@ public final class UserDao {
 
 			UserInfo user = new UserInfo();
 			user.setName("user" + i);
-			user.setPassword(i);
+			user.setPassword(String.valueOf(i));
 
 			UserDB.put(user.getName(), user);
 		}
