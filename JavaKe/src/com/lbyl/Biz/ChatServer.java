@@ -3,6 +3,7 @@ package com.lbyl.Biz;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.logging.Logger;
 
 import com.lbyl.Utils.ChatUtil;
 
@@ -14,7 +15,7 @@ import com.lbyl.Utils.ChatUtil;
  */
 public class ChatServer {
 
-	private boolean runningState;
+	private static boolean runningState;
 	private int port;
 	private ServerSocket sc;
 	private MainThread mThread;
@@ -60,16 +61,19 @@ public class ChatServer {
 	 * 
 	 * @return
 	 */
-	public boolean getRunningState() {
+	public static boolean getRunningState() {
 		return runningState;
 	}
+
 	/**
 	 * 关闭服务器
-	 * @throws IOException 
+	 * 
+	 * @throws IOException
 	 */
-	public void closeServer() throws IOException{
-		sc.close();
+	public void closeServer() throws IOException {
 		mThread.interrupt();
+		sc.close();
+		System.out.println("----------服务器已关闭！---------");
 	}
 
 	/**
@@ -95,12 +99,13 @@ public class ChatServer {
 					ChatUtil.getStList().add(st);
 					System.out.println("-------现在有" + ChatUtil.getStList().size() + "个客户端--------");
 
+					
+					
 					st.start();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					System.out.println("停止接收客户端");
 				}
-
 			}
 		}
 	}
